@@ -48,9 +48,7 @@ class loan(BaseModel):
     dti : float = Field(
         ..., ge=0 , description = 'Debt-to-income ratio, calculated as the borrower’s monthly debt payments divided by their monthly income.'
     )
-    loan_amnt : float = Field(
-        ..., ge=0 , description = ''
-    )
+    
     open_acc : float = Field(
         ..., ge=0 , description = 'The number of open credit lines in the borrower’s credit history.'
     )
