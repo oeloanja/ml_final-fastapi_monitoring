@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 def prepare_dataset(test_size=0.2, random_seed=1):
     dataset = pd.read_csv(
-        "./resampled_data.csv",
+        "./Multi_3_train.csv",
         delimiter=",",
     )
     dataset = dataset.rename(columns=lambda x: x.lower().replace(" ", "_"))
@@ -31,10 +31,10 @@ def train():
     test_df = dataset["test"]
 
    
-    y_train = train_df["target"]
-    X_train = train_df.drop("target", axis=1)
-    y_test = test_df["target"]
-    X_test = test_df.drop("target", axis=1)
+    y_train = train_df["loan_status"]
+    X_train = train_df.drop("loan_status", axis=1)
+    y_test = test_df["loan_status"]
+    X_test = test_df.drop("loan_status", axis=1)
 
     logger.info("Training model...")
     scaler = preprocessing.StandardScaler().fit(X_train)
