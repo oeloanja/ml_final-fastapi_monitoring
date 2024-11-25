@@ -19,8 +19,8 @@ feature_namse = [
  'emp'                         
  'home_ownership'
  'purpose'
- 'earliest_cr_line'
- 'issue_d'
+ 'cr_line_period'
+ 'issue_d_period'
 ]
 
 
@@ -82,10 +82,10 @@ class loan(BaseModel):
     purpose : float = Field(
         ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
     )
-    earliest_cr_line : float = Field(
+    cr_line_period : float = Field(
         ..., ge=0 , description = 'The date when the borrower’s earliest credit line was opened.'
     )
-    issue_d : float = Field(
+    issue_d_period : float = Field(
         ..., ge=0 , description = 'The date when the loan was issued.'
     )
 
