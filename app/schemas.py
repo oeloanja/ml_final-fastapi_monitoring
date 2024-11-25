@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 
+
 feature_namse = [
     
  'loan_amnt'                   
