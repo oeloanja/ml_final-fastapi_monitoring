@@ -1,3 +1,2 @@
 *.csv
-
-resampled_data.csv
+resampled_data.csv.gz
