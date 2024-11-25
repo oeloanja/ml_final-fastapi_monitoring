@@ -19,8 +19,8 @@ feature_namse = [
  'emp'                         
  'home_ownership'
  'purpose'
- 'cr_line_period'
- 'issue_d_period'
+ 'earliest_cr_line'
+ 'issue_d'
 ]
 
 
@@ -48,7 +48,9 @@ class loan(BaseModel):
     dti : float = Field(
         ..., ge=0 , description = 'Debt-to-income ratio, calculated as the borrower’s monthly debt payments divided by their monthly income.'
     )
-    
+    loan_amnt : float = Field(
+        ..., ge=0 , description = ''
+    )
     open_acc : float = Field(
         ..., ge=0 , description = 'The number of open credit lines in the borrower’s credit history.'
     )
@@ -80,10 +82,10 @@ class loan(BaseModel):
     purpose : float = Field(
         ..., ge=0 , description = ' The purpose of the loan (e.g., debt consolidation, home improvement).'
     )
-    cr_line_period : float = Field(
+    earliest_cr_line : float = Field(
         ..., ge=0 , description = 'The date when the borrower’s earliest credit line was opened.'
     )
-    issue_d_period : float = Field(
+    issue_d : float = Field(
         ..., ge=0 , description = 'The date when the loan was issued.'
     )
 
